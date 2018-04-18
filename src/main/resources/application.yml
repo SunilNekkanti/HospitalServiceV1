@@ -1,0 +1,27 @@
+server:
+ port: 8086
+spring:
+ cloud:
+  stream:
+   kafka:
+    binder:
+     brokers: keycloak.graeshoppe.divisotech.com:9092
+   bindings:
+    booking-in:
+     destination: alloted-slot
+     contentType: application/json
+    booking-out:
+     destination: booked-patient-sucess
+     contentType: application/json
+    admission-in:  
+     destination: allocated-bed
+     contentType: application/json
+    admission-out:  
+     destination: admission-sucess
+     contentType: application/json
+    consultation-in:  
+     destination: create-consultation
+     contentType: application/json
+    consultation-out:  
+     destination: consultation-out
+     contentType: application/json 
